@@ -17,18 +17,18 @@ export function AppHeader({ links = [] }: { links: { label: string; path: string
   }
 
   return (
-    <header className="relative z-50 px-4 py-2 bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-400">
+    <header className="relative z-50 px-6 py-2 bg-white shadow-sm">
       <div className="mx-auto flex justify-between items-center">
         <div className="flex items-baseline gap-4">
-          <Link className="text-xl hover:text-neutral-500 dark:hover:text-white" href="/">
-            <span>TigerTrust</span>
+          <Link className="text-xl font-bold text-tigerGreen hover:text-green-700" href="/">
+            <span>TIGERTRUST</span>
           </Link>
           <div className="hidden md:flex items-center">
-            <ul className="flex gap-4 flex-nowrap items-center">
+            <ul className="flex gap-6 flex-nowrap items-center">
               {links.map(({ label, path }) => (
                 <li key={path}>
                   <Link
-                    className={`hover:text-neutral-500 dark:hover:text-white ${isActive(path) ? 'text-neutral-500 dark:text-white' : ''}`}
+                    className={`hover:text-tigerGreen transition-colors ${isActive(path) ? 'text-tigerGreen font-semibold' : 'text-gray-700'}`}
                     href={path}
                   >
                     {label}

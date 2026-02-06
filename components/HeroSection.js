@@ -1,7 +1,8 @@
-'use client'
-import { useRouter } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-export function AppHero() {
+export default function HeroSection() {
   const router = useRouter()
 
   const handleGetStarted = () => {
@@ -37,10 +38,13 @@ export function AppHero() {
       
       {/* Right column */}
       <div className="flex-1 max-w-md">
-        <img
-          src="/images/crypto-wallet-illustration.png"
+        <Image
+          src="/images/crypto-wallet-illustration.svg"
           alt="Crypto wallet and phone illustration"
-          className="rounded-lg w-full h-auto max-w-[500px] max-h-[400px]"
+          width={500}
+          height={400}
+          layout="responsive"
+          className="rounded-lg"
         />
       </div>
     </section>
