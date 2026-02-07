@@ -9,8 +9,21 @@ const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:500
 interface VerificationResult {
   success: boolean
   verified: boolean
-  confidence?: number
-  message?: string
+  confidence: number
+  message: string
+  details?: {
+    face_quality: number
+    blur_level: number
+    head_pose: {
+      yaw: number
+      pitch: number
+      roll: number
+    }
+    landmarks?: any
+  }
+  issues?: string[]
+  timestamp?: number
+  face_token?: string
   error?: string
 }
 
@@ -34,12 +47,15 @@ export default function VerifyPage() {
       })
 
       const data = await response.json()
+      console.log('Verification response:', data) // Debug log
       setResult(data)
       setIsVerifying(false)
     } catch (error) {
       console.error('Error verifying:', error)
       setResult({
         success: false,
+        confidence: 0,
+        message: 'Failed to connect to verification service',
         verified: false,
         error: 'Failed to connect to verification service',
       })

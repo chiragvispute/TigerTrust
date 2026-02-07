@@ -227,7 +227,7 @@ export function CameraVerification({ onCapture, isVerifying }: CameraVerificatio
           <li>• Position your face in the center of the frame</li>
           <li>• Look directly at the camera</li>
           <li>• Remove glasses or hats if possible</li>
-          <li>• Keep your eyes open during capture</li>
+          <li>• Keep still when capturing</li>
         </ul>
       </div>
     </div>

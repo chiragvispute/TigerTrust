@@ -148,15 +148,9 @@ def verify_human():
             issues.append("Image too blurry")
         confidence_scores.append(blur_score if blur_pass else blur_score * 0.5)
         
-        # Check if eyes are open (liveness indicator) - CRITICAL CHECK
-        # Lower threshold to be more inclusive of different eye shapes
+        # Eye check removed - no longer checking eye status
         avg_eye_open = (left_eye_open + right_eye_open) / 2
-        eyes_pass = left_eye_open >= 20 and right_eye_open >= 20  # More inclusive threshold
-        if not eyes_pass:
-            is_verified = False
-            issues.append("Please keep your eyes open")
-        # Heavily penalize if eyes are not open (critical for liveness)
-        confidence_scores.append(avg_eye_open if eyes_pass else avg_eye_open * 0.3)
+        logger.info(f"Eye status (info only) - Left: {left_eye_open}, Right: {right_eye_open}, Avg: {avg_eye_open}")
         
         # Check head pose (should be relatively frontal)
         total_angle_deviation = yaw_angle + pitch_angle + roll_angle
@@ -193,10 +187,6 @@ def verify_human():
             "details": {
                 "face_quality": face_quality,
                 "blur_level": blur_level,
-                "eyes_open": {
-                    "left": left_eye_open,
-                    "right": right_eye_open
-                },
                 "head_pose": {
                     "yaw": headpose.get('yaw_angle', 0),
                     "pitch": headpose.get('pitch_angle', 0),

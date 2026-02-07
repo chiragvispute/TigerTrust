@@ -13,10 +13,6 @@ interface VerificationResult {
   details?: {
     face_quality: number;
     blur_level: number;
-    eyes_open: {
-      left: number;
-      right: number;
-    };
     head_pose: {
       yaw: number;
       pitch: number;
@@ -149,35 +145,6 @@ export function VerificationResults({ result, onReset }: VerificationResultsProp
                 <span className="text-gray-600 dark:text-gray-400">Blur Level</span>
                 <span className="font-medium text-gray-900 dark:text-gray-100">
                   {details.blur_level.toFixed(1)}%
-                </span>
-              </div>
-            </div>
-          </Card>
-
-          {/* Eye Status */}
-          <Card className="p-6">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                <svg className="w-6 h-6 text-green-600 dark:text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" strokeWidth="2"/>
-                  <circle cx="12" cy="12" r="3" strokeWidth="2"/>
-                </svg>
-              </div>
-              <h3 className="font-semibold text-gray-900 dark:text-gray-100">
-                Eye Detection
-              </h3>
-            </div>
-            <div className="space-y-2">
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-600 dark:text-gray-400">Left Eye</span>
-                <span className="font-medium text-gray-900 dark:text-gray-100">
-                  {details.eyes_open.left.toFixed(0)}% Open
-                </span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-600 dark:text-gray-400">Right Eye</span>
-                <span className="font-medium text-gray-900 dark:text-gray-100">
-                  {details.eyes_open.right.toFixed(0)}% Open
                 </span>
               </div>
             </div>
