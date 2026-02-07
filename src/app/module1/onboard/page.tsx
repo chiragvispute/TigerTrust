@@ -76,46 +76,26 @@ export default function OnboardingPage() {
         return (
           <div className="text-center">
             <h2 className="text-2xl font-bold text-tigerGreen mb-4">
-              Generate Decentralized ID
+              Human Identity Verification
             </h2>
             <p className="text-gray-600 mb-4">
-              Generate Your Decentralized ID (DID).
+              Verify your identity using facial recognition.
             </p>
-            <div className="bg-gray-100 p-4 rounded-lg mb-6">
-              <p className="text-sm text-gray-600">Your DID will be:</p>
-              <code className="text-tigerGreen font-mono">did:tigertrust:user123</code>
-            </div>
+            <p className="text-sm text-yellow-600 mb-6 italic">
+              Click below to start the liveness verification process.
+            </p>
             <button
-              onClick={() => handleNextStep(2)}
+              onClick={() => router.push('/verify')}
               disabled={loading}
               className="bg-tigerGreen text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors disabled:opacity-50"
             >
-              {loading ? 'Generating...' : 'Generate DID'}
+              Start Liveness Check
             </button>
           </div>
         )
       
       default:
-        return (
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-tigerGreen mb-4">
-              Human Identity Verification
-            </h2>
-            <p className="text-gray-600 mb-4">
-              Verify Human Identity.
-            </p>
-            <p className="text-sm text-yellow-600 mb-6 italic">
-              Note: This is a simulated liveness check for demo purposes.
-            </p>
-            <button
-              onClick={() => handleNextStep(3)}
-              disabled={loading}
-              className="bg-tigerGreen text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors disabled:opacity-50"
-            >
-              {loading ? 'Verifying...' : 'Start Liveness Check'}
-            </button>
-          </div>
-        )
+        return null
     }
   }
 

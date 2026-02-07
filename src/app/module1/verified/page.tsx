@@ -6,7 +6,7 @@ export default function IdentityVerifiedPage() {
   const router = useRouter()
 
   const handleGoToDashboard = () => {
-    router.push('/dashboard')
+    router.push('/loan/dashboard')
   }
 
   return (

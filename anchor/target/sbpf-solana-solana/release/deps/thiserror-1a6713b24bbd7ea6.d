@@ -1,0 +1,10 @@
+/mnt/c/Users/Sakshi Thorat/new_tigertrust/anchor/target/sbpf-solana-solana/release/deps/libthiserror-1a6713b24bbd7ea6.rmeta: /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/lib.rs /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/aserror.rs /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/display.rs /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/provide.rs
+
+/mnt/c/Users/Sakshi Thorat/new_tigertrust/anchor/target/sbpf-solana-solana/release/deps/libthiserror-1a6713b24bbd7ea6.rlib: /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/lib.rs /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/aserror.rs /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/display.rs /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/provide.rs
+
+/mnt/c/Users/Sakshi Thorat/new_tigertrust/anchor/target/sbpf-solana-solana/release/deps/thiserror-1a6713b24bbd7ea6.d: /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/lib.rs /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/aserror.rs /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/display.rs /home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/provide.rs
+
+/home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/lib.rs:
+/home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/aserror.rs:
+/home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/display.rs:
+/home/sakshi_ubuntu/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/provide.rs:
