@@ -127,9 +127,6 @@ export function FacialOverlay({ isDetecting, faceDetected, qualityScore }: Facia
 
     // Draw facial landmark points
     const landmarks = [
-      // Eyes
-      { x: centerX - faceWidth * 0.3, y: centerY - faceHeight * 0.15 },
-      { x: centerX + faceWidth * 0.3, y: centerY - faceHeight * 0.15 },
       // Nose
       { x: centerX, y: centerY },
       // Mouth corners
@@ -183,12 +180,9 @@ export function FacialOverlay({ isDetecting, faceDetected, qualityScore }: Facia
     
     // Face contour connections
     const connections = [
-      [0, 1], // Eyes
-      [0, 3], // Left eye to left mouth
-      [1, 4], // Right eye to right mouth
-      [3, 4], // Mouth
-      [2, 7], // Nose to chin
-      [8, 9], [9, 10], // Forehead
+      [1, 2], // Mouth corners
+      [0, 5], // Nose to chin
+      [6, 7], [7, 8], // Forehead
     ];
 
     connections.forEach(([start, end]) => {

@@ -83,7 +83,7 @@ def verify_human():
                 'api_key': FACEPP_API_KEY,
                 'api_secret': FACEPP_API_SECRET,
                 'return_landmark': 2,  # Return 106 facial landmarks
-                'return_attributes': 'headpose,eyestatus,facequality,blur'
+                'return_attributes': 'headpose,facequality,blur'
             },
             files={
                 'image_file': ('image.jpg', image_bytes, 'image/jpeg')
@@ -117,11 +117,6 @@ def verify_human():
         face_quality = attributes.get('facequality', {}).get('value', 0)
         blur_level = attributes.get('blur', {}).get('blurness', {}).get('value', 100)
         
-        # Eye status (to check liveness)
-        eye_status = attributes.get('eyestatus', {})
-        left_eye_open = eye_status.get('left_eye_status', {}).get('normal_glass_eye_open', 0)
-        right_eye_open = eye_status.get('right_eye_status', {}).get('normal_glass_eye_open', 0)
-        
         # Head pose (to check if face is frontal)
         headpose = attributes.get('headpose', {})
         yaw_angle = abs(headpose.get('yaw_angle', 0))
@@ -147,10 +142,6 @@ def verify_human():
             is_verified = False
             issues.append("Image too blurry")
         confidence_scores.append(blur_score if blur_pass else blur_score * 0.5)
-        
-        # Eye check removed - no longer checking eye status
-        avg_eye_open = (left_eye_open + right_eye_open) / 2
-        logger.info(f"Eye status (info only) - Left: {left_eye_open}, Right: {right_eye_open}, Avg: {avg_eye_open}")
         
         # Check head pose (should be relatively frontal)
         total_angle_deviation = yaw_angle + pitch_angle + roll_angle
